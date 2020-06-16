@@ -7,20 +7,20 @@
 BITBUCKET_USER="bitbucket"
 BITBUCKET_INSTALL_DIR="/opt/bitbucket"
 BITBUCKET_HOME="/var/bitbucket/"
-BITBUCKET_DISPLAY_NAME="Your Bitbucket"
-BITBUCKET_BASE_URL="bity.gordi.ir"
+BITBUCKET_DISPLAY_NAME="GrimeBucket"
+BITBUCKET_BASE_URL="git.grimebucket.cloud"
 BITBUCKET_LICENSE=""
-BITBUCKET_SYSADMIN_USER="superuser"
-BITBUCKET_SYSADMIN_PASSWORD="logmein2018@@"
+BITBUCKET_SYSADMIN_USER="root"
+BITBUCKET_SYSADMIN_PASSWORD="123456"
 BITBUCKET_SYSADMIN_DISPLAY_NAME="Bitbucket Superuser"
-BITBUCKET_SYSADMIN_EMAIL_ADDRESS="superuser@mydomain.tld"
+BITBUCKET_SYSADMIN_EMAIL_ADDRESS="rizzo@gdsbusiness.com"
 BITBUCKET_DATABASE_NAME="bitbucket"
 BITBUCKET_DATABASE_USERNAME="bitbucketusernameDB2018"
 BITBUCKET_DATABASE_PASSWORD="bitbucketpasswordDB2018"
-BITBUCKET_PLUGIN_MIRRORING_UPSTREAM="https://bity.gordi.ir"
+BITBUCKET_PLUGIN_MIRRORING_UPSTREAM="git.grimebucket.cloud"
 BITBUCKET_SSL_CERTIFICATE_PASS="myrandomSSLpass"
 # Bitbucket archive URL
-BITBUCKET_URL="https://downloads.atlassian.com/software/stash/downloads/atlassian-bitbucket-5.15.1.tar.gz"
+BITBUCKET_URL="https://product-downloads.atlassian.com/software/stash/downloads/atlassian-bitbucket-7.3.0.tar.gz"
 # JDK 8 tar.gz Archive
 JAVA_REPOSITORY="https://ftp.weheartwebsites.de/linux/java/jdk/"
 JAVA_FILENAME="jdk-8u192-linux-x64.tar.gz"
@@ -45,7 +45,7 @@ printf "Your Public IP address is $SYSTEM_IP? (y/n) "
 read answer
 if [[ "$answer" == "y" ]]
 then
-	DOMAIN_IP=`dig $BITBUCKET_BASE_URL +short @8.8.8.8`
+	DOMAIN_IP=`dig $BITBUCKET_BASE_URL +short @66.11.115.238
 	if [[ "$DOMAIN_IP" == "$SYSTEM_IP" ]]
 	then
 		echo "System IP and Domain got matched."
@@ -57,7 +57,7 @@ then
 else
 	printf "Please Enter your correct Public IP of Server. (Must match with domain)"
 	read answer
-	DOMAIN_IP=`dig $BITBUCKET_BASE_URL +short @8.8.8.8`
+	DOMAIN_IP=`dig $BITBUCKET_BASE_URL +short @66.11.115.238
 	if [[ "$DOMAIN_IP" == "$answer" ]]
 	then
 		echo "System IP and Domain got matched."
